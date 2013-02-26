@@ -14,6 +14,8 @@ class OpensearchController < ApplicationController
     render :index, :layout => false, :content_type => 'application/opensearchdescription+xml'
   end
 
+  private
+
   def find_optional_project
     @project = Project.find(params[:project_id]) unless params[:project_id].blank?
   rescue ActiveRecord::RecordNotFound
